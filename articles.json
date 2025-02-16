@@ -1,0 +1,22 @@
+{
+    "articles": [
+        {
+            "title": "La rivoluzione dell'IA",
+            "abstract": "L'intelligenza artificiale sta cambiando il mondo in modi inaspettati.",
+            "image": "images/ia.jpg",
+            "link": "articles/ia.html"
+        },
+        {
+            "title": "Viaggio nello spazio: il futuro dell'umanità",
+            "abstract": "Le missioni spaziali stanno diventando sempre più ambiziose.",
+            "image": "images/spazio.jpg",
+            "link": "articles/spazio.html"
+        },
+        {
+            "title": "Il dilemma etico della scienza moderna",
+            "abstract": "Fino a che punto possiamo spingerci con la tecnologia?",
+            "image": "images/etica.jpg",
+            "link": "articles/etica.html"
+        }
+    ]
+}
