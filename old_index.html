@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Watcher</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 15px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+        .navbar a:hover {
+            background-color: #555;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .article {
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .article img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .article a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <p style="margin-right: 100px;">THE WATCHER</p>
+        <a href="#">Generale</a>
+        <a href="#">Attualità</a>
+        <a href="#">Filosofia</a>
+        <a href="#">Scienza</a>
+    </nav>
+    <div class="container" id="articles">
+        <div class="article">
+            <img src="ia.jpg" alt="La rivoluzione dell'IA">
+            <h3>La rivoluzione dell'IA</h3>
+            <p>L'intelligenza artificiale sta cambiando il mondo in modi inaspettati.</p>
+            <a href="articles/ia.html">Leggi di più</a>
+        </div>
+        <div class="article">
+            <img src="ia.jpg" alt="La rivoluzione dell'IA">
+            <h3>La rivoluzione dell'IA</h3>
+            <p>L'intelligenza artificiale sta cambiando il mondo in modi inaspettati.</p>
+            <a href="articles/ia.html">Leggi di più</a>
+        </div>
+        <div class="article">
+            <img src="ia.jpg" alt="La rivoluzione dell'IA">
+            <h3>La rivoluzione dell'IA</h3>
+            <p>L'intelligenza artificiale sta cambiando il mondo in modi inaspettati.</p>
+            <a href="articles/ia.html">Leggi di più</a>
+        </div>
+        <div class="article">
+            <img src="ia.jpg" alt="La rivoluzione dell'IA">
+            <h3>La rivoluzione dell'IA</h3>
+            <p>L'intelligenza artificiale sta cambiando il mondo in modi inaspettati.</p>
+            <a href="articles/ia.html">Leggi di più</a>
+        </div>
+    </div>
+
+    <script>
+        fetch('articles.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('articles');
+                data.articles.forEach(article => {
+                    const div = document.createElement('div');
+                    div.className = 'article';
+                    div.innerHTML = `
+                        <img src="${article.image}" alt="${article.title}">
+                        <h3>${article.title}</h3>
+                        <p>${article.abstract}</p>
+                        <a href="${article.link}">Leggi di più</a>
+                    `;
+                    container.appendChild(div);
+                });
+            });
+    </script>
+</body>
+</html>
